@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ProAsp;
 using ProAsp.Controllers;
+using Moq;
+using ProAsp.Core.Services;
 
 namespace ProAsp.Tests.Controllers
 {
@@ -16,7 +18,8 @@ namespace ProAsp.Tests.Controllers
         public void Index()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            Mock<IUserService> userServiceMock = new Mock<IUserService>();
+            HomeController controller = new HomeController(userServiceMock.Object);
 
             // Act
             ViewResult result = controller.Index();
@@ -29,20 +32,22 @@ namespace ProAsp.Tests.Controllers
         public void About()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            Mock<IUserService> userServiceMock = new Mock<IUserService>();
+            HomeController controller = new HomeController(userServiceMock.Object);
 
             // Act
             ViewResult result = controller.About();
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            Assert.AreEqual("About me.", result.ViewBag.Message);
         }
 
         [TestMethod]
         public void Contact()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            Mock<IUserService> userServiceMock = new Mock<IUserService>();
+            HomeController controller = new HomeController(userServiceMock.Object);
 
             // Act
             ViewResult result = controller.Contact();

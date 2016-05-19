@@ -1,0 +1,17 @@
+﻿@using ProAsp.Data.Models
+@model System.Collections.Generic.IEnumerable<ProAsp.Data.Models.User>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>title</h2>
+<ul>
+    @foreach (User u in Model)
+    {
+        <li>
+            @u.Name
+        </li>
+}
+</ul>
