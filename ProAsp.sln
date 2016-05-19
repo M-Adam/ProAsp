@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProAsp", "ProAsp\ProAsp.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProAsp.Tests", "ProAsp.Tests\ProAsp.Tests.csproj", "{D96B1DF2-E303-4222-B85D-204000AB27AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProAsp.Core", "ProAsp.Core\ProAsp.Core.csproj", "{2A511F64-9AF3-4F25-94FF-E7682A756E30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D96B1DF2-E303-4222-B85D-204000AB27AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D96B1DF2-E303-4222-B85D-204000AB27AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D96B1DF2-E303-4222-B85D-204000AB27AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A511F64-9AF3-4F25-94FF-E7682A756E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A511F64-9AF3-4F25-94FF-E7682A756E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A511F64-9AF3-4F25-94FF-E7682A756E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A511F64-9AF3-4F25-94FF-E7682A756E30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
