@@ -14,7 +14,9 @@ using Container = SimpleInjector.Container;
 using ProAsp.Core.Services;
 using ProAsp.Data;
 using ProAsp.Data.DatabaseContext;
+using ProAsp.Data.Models;
 using ProAsp.Data.Repository;
+using ProAsp.Viewmodels;
 using SimpleInjector.Integration.Web;
 
 namespace ProAsp
@@ -36,6 +38,13 @@ namespace ProAsp
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             DependencyResolver.SetResolver(RegisterContainer());
+            SetupAutomapper();
+        }
+
+        private void SetupAutomapper()
+        {
+            AutoMapper.Mapper.Initialize(x=>x.CreateMap<Article, ArticleViewmodel>());
+            
         }
 
         private SimpleInjectorDependencyResolver RegisterContainer()

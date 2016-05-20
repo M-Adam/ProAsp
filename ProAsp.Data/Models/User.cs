@@ -9,6 +9,7 @@ namespace ProAsp.Data.Models
     public class User : BaseEntity
     {
         public string Name { get; set; }
+        public virtual HashSet<Article> Articles { get; set; }
     }
 
 

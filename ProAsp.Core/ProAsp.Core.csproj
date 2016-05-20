@@ -63,6 +63,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\ArticleService.cs" />
     <Compile Include="Services\LoggerService.cs" />
     <Compile Include="Services\UserService.cs" />
   </ItemGroup>

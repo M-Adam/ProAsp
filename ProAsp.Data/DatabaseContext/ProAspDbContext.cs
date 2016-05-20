@@ -3,7 +3,6 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Reflection;
-using ProAsp.Data.Migrations;
 using ProAsp.Data.Models;
 
 namespace ProAsp.Data.DatabaseContext
@@ -12,10 +11,8 @@ namespace ProAsp.Data.DatabaseContext
     {
         public ProAspDbContext() : base("ProAspDb")
         {
-            Database.SetInitializer<ProAspDbContext>(new MigrateDatabaseToLatestVersion<ProAspDbContext,Configuration>());
+            Database.SetInitializer<ProAspDbContext>(new MigrateDatabaseToLatestVersion<ProAspDbContext,ProAsp.Data.Migrations.Configuration>());
         }
-
-        public DbSet<User> Users { get; set; }
 
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : BaseEntity
         {
@@ -39,7 +36,16 @@ namespace ProAsp.Data.DatabaseContext
                 modelBuilder.Configurations.Add(configInstance);
             }
 
+            modelBuilder.Entity<Article>().HasOptional(x => x.Creator).WithMany(x=>x.Articles);
+            modelBuilder.Entity<User>().HasMany(x => x.Articles).WithOptional(x => x.Creator);
+            
+
             base.OnModelCreating(modelBuilder);
         }
+
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Article> Articles { get; set; }
+
+        
     }
 }

@@ -49,6 +49,7 @@ namespace ProAsp.Data.Repository
                 throw new ArgumentNullException("entityDelete");
 
             this.Entities.Remove(entity);
+            
             this._context.SaveChanges();
         }
 

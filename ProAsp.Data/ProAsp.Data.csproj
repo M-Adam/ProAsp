@@ -56,10 +56,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mapping\ArticleMap.cs" />
+    <Compile Include="Mapping\UserMap.cs" />
     <Compile Include="Migrations\201605191343020_Init.cs" />
     <Compile Include="Migrations\201605191343020_Init.Designer.cs">
       <DependentUpon>201605191343020_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605201036178_ArticlesAdded.cs" />
+    <Compile Include="Migrations\201605201036178_ArticlesAdded.Designer.cs">
+      <DependentUpon>201605201036178_ArticlesAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Article.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="DatabaseContext\IDbContext.cs" />
     <Compile Include="Repository\IRepository.cs" />
@@ -76,6 +83,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605191343020_Init.resx">
       <DependentUpon>201605191343020_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605201036178_ArticlesAdded.resx">
+      <DependentUpon>201605201036178_ArticlesAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
