@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using ProAsp.Data.Migrations;
 using ProAsp.Data.Models;
 
-namespace ProAsp.Data
+namespace ProAsp.Data.DatabaseContext
 {
     public class ProAspDbContext : DbContext, IDbContext
     {

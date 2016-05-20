@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using ProAsp.Data.Models;
 
-namespace ProAsp.Data
+namespace ProAsp.Data.DatabaseContext
 {
     public interface IDbContext
     {

@@ -14,12 +14,14 @@ namespace ProAsp.Tests.Controllers
     [TestClass]
     public class HomeControllerTest
     {
+        readonly Mock<IUserService> _userServiceMock = new Mock<IUserService>();
+        readonly Mock<ILoggerService> _loggerServiceMock = new Mock<ILoggerService>();
+
         [TestMethod]
         public void Index()
         {
             // Arrange
-            Mock<IUserService> userServiceMock = new Mock<IUserService>();
-            HomeController controller = new HomeController(userServiceMock.Object);
+            HomeController controller = new HomeController(_userServiceMock.Object, _loggerServiceMock.Object);
 
             // Act
             ViewResult result = controller.Index();
@@ -32,8 +34,7 @@ namespace ProAsp.Tests.Controllers
         public void About()
         {
             // Arrange
-            Mock<IUserService> userServiceMock = new Mock<IUserService>();
-            HomeController controller = new HomeController(userServiceMock.Object);
+            HomeController controller = new HomeController(_userServiceMock.Object, _loggerServiceMock.Object);
 
             // Act
             ViewResult result = controller.About();
@@ -46,8 +47,7 @@ namespace ProAsp.Tests.Controllers
         public void Contact()
         {
             // Arrange
-            Mock<IUserService> userServiceMock = new Mock<IUserService>();
-            HomeController controller = new HomeController(userServiceMock.Object);
+            HomeController controller = new HomeController(_userServiceMock.Object, _loggerServiceMock.Object);
 
             // Act
             ViewResult result = controller.Contact();

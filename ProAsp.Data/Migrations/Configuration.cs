@@ -1,3 +1,4 @@
+using ProAsp.Data.DatabaseContext;
 using ProAsp.Data.Models;
 
 namespace ProAsp.Data.Migrations
@@ -7,7 +8,7 @@ namespace ProAsp.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ProAsp.Data.ProAspDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ProAspDbContext>
     {
         public Configuration()
         {
@@ -16,7 +17,7 @@ namespace ProAsp.Data.Migrations
             CommandTimeout = Int32.MaxValue;
         }
 
-        protected override void Seed(ProAsp.Data.ProAspDbContext context)
+        protected override void Seed(ProAspDbContext context)
         {
             
 

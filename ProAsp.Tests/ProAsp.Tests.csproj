@@ -89,6 +89,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="Services\UserServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -100,6 +101,10 @@
     <ProjectReference Include="..\ProAsp.Core\ProAsp.Core.csproj">
       <Project>{2a511f64-9af3-4f25-94ff-e7682a756e30}</Project>
       <Name>ProAsp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProAsp.Data\ProAsp.Data.csproj">
+      <Project>{d09ccb0a-0ae1-45b2-b6c7-45c247b0679e}</Project>
+      <Name>ProAsp.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\ProAsp\ProAsp.csproj">
       <Project>{00667B27-D86E-4CE9-A71C-273AA52F550E}</Project>

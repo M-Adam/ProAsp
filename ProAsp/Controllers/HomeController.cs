@@ -9,11 +9,13 @@ namespace ProAsp.Controllers
 {
     public class HomeController : Controller
     {
-        private IUserService _userService;
+        private readonly IUserService _userService;
+        private readonly ILoggerService _loggerService;
 
-        public HomeController(IUserService userService)
+        public HomeController(IUserService userService, ILoggerService loggerService)
         {
-            this._userService = userService;
+            _userService = userService;
+            _loggerService = loggerService;
         }
 
         public ViewResult Index()
@@ -24,6 +26,7 @@ namespace ProAsp.Controllers
         public ViewResult About()
         {
             ViewBag.Message = "About me.";
+            _loggerService.LogInfo("aaa");
             return View();
         }
 

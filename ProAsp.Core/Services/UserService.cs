@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProAsp.Data;
 using ProAsp.Data.Models;
+using ProAsp.Data.Repository;
 
 namespace ProAsp.Core.Services
 {
